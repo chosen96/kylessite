@@ -1,0 +1,129 @@
+.kursor {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    transition: 0.1s;
+    transform: (-50%, -50%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+
+.box--loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-justify-content: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  align-items: center;
+  background: #010101;
+  color: #fff;
+  z-index: 999;
+
+  -webkit-animation: wipeLoader 1.2s cubic-bezier(.9,.12,.2,1) 3.8s forwards;
+  -moz-animation: 1.2s cubic-bezier(.9,.12,.2,1) 3.8s wipeLoader forwards;
+  -o-animation: 1.2s cubic-bezier(.9,.12,.2,1) 3.8s wipeLoader forwards;
+
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+
+  animation: wipeLoader 1.2s cubic-bezier(.9,.12,.2,1) 3.8s forwards;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(0.9, 0.12, 0.2, 1);
+  animation-delay: 3.8s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-play-state: running;
+  animation-name: wipeLoader;
+  will-change: transform;
+}
+
+.box--loader .text-loading {
+  -webkit-animation: moveTextUp 1.5s cubic-bezier(.79,.17,.28,1.1),moveTextUpper 1.5s cubic-bezier(.79,.17,.28,1.1) 3s forwards;
+  -moz-animation: 1.5s cubic-bezier(.79,.17,.28,1.1) moveTextUp,1.5s cubic-bezier(.79,.17,.28,1.1) moveTextUpper 3s forwards;
+  -o-animation: 1.5s cubic-bezier(.79,.17,.28,1.1) moveTextUp,1.5s cubic-bezier(.79,.17,.28,1.1) moveTextUpper 3s forwards;
+
+  animation: moveTextUp 1.5s cubic-bezier(.79,.17,.28,1.1),moveTextUpper 1.5s cubic-bezier(.79,.17,.28,1.1) 3s forwards;
+  animation-duration: 1.5s, 1.5s;
+  animation-timing-function: cubic-bezier(0.79, 0.17, 0.28, 1.1), cubic-bezier(0.79, 0.17, 0.28, 1.1);
+  animation-delay: 0.0s, 3.0s;
+  animation-iteration-count: 1, 1;
+  animation-direction: normal, normal;
+  animation-fill-mode: none, forwards;
+  animation-play-state: running, running;
+  animation-name: moveTextUp, moveTextUpper;
+}
+
+.box--loader .text-loading-wrap {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    line-height: 2.25vw;
+}
+
+.box--loader .text-loading, .box--loader .text-loading-wrap {
+    -moz-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+@keyframes moveTextUp {
+  0% {
+    -webkit-transform: translateY(140%);
+    -moz-transform: translateY(140%);
+    -o-transform: translateY(140%);
+    transform: translateY(140%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+@keyframes moveTextUpper {
+  0% {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-140%);
+    -moz-transform: translateY(-140%);
+    -o-transform: translateY(-140%);
+    transform: translateY(-140%);
+  }
+}
+
+@keyframes wipeLoader {
+  0% {
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
